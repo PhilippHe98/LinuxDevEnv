@@ -31,7 +31,7 @@ git clone https://github.com/PhilippHe98/kickstart.nvim.git "${XDG_CONFIG_HOME:-
 echo "done"
 
 echo "Installing and setting up oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 
 # Plugins installieren
@@ -46,4 +46,3 @@ ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 echo "done"
 
 chsh -s $(which zsh)
-source ~/.zshrc
