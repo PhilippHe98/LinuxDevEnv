@@ -152,3 +152,4 @@ eval "$(zoxide init --cmd cd zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$HOME/.cargo/bin:$PATH"
