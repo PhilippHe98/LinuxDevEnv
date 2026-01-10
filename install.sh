@@ -28,6 +28,8 @@ echo "done."
 
 echo "Setting up zsh"
 ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 echo "done"
 
 echo "Setting up neovim"
@@ -35,3 +37,4 @@ git clone https://github.com/PhilippHe98/kickstart.nvim.git "${XDG_CONFIG_HOME:-
 echo "done"
 
 chsh -s $(which zsh)
+source ~/.zshrc
