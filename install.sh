@@ -23,7 +23,7 @@ echo "done"
 
 echo "Setting up Tmux..."
 mkdir -p ~/.tmux
-ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 echo "done."
 
 echo "Setting up neovim"
@@ -42,7 +42,7 @@ git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-m
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 echo "Linking .zshrc"
-ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
+ln -sf ~/.dotfiles/zsh/.zshrc ~/.zshrc
 echo "done"
 
 chsh -s $(which zsh)
