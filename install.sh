@@ -26,14 +26,23 @@ mkdir -p ~/.tmux
 ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 echo "done."
 
-echo "Setting up zsh"
-ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo "done"
-
 echo "Setting up neovim"
 git clone https://github.com/PhilippHe98/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+echo "done"
+
+echo "Installing and setting up oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
+
+# Plugins installieren
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
+# Theme installieren
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+echo "Linking .zshrc"
+ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 echo "done"
 
 chsh -s $(which zsh)
