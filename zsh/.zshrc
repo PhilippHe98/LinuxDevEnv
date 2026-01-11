@@ -71,7 +71,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+
+# VI mode keybindings
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+ZVM_VI_VISUAL_ESCAPE_BINDKEY=jk
 ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 ZVM_CURSOR_STYLE_ENABLED=true
 ZVM_SYSTEM_CLIPBOARD_ENABLED=true
